@@ -223,6 +223,8 @@ namespace Elasticsearch.Net
 		All = 1 << 7
 	}
 
+
+
 	[Flags]public enum IndicesStatsMetric
 	{
 	[EnumMember(Value = "completion")]
@@ -342,7 +344,6 @@ namespace Elasticsearch.Net
 		[EnumMember(Value = "_all")]
 		All = 1 << 15
 	}
-
 	[Flags]public enum NodesUsageMetric
 	{
 	[EnumMember(Value = "rest_actions")]
@@ -350,7 +351,6 @@ namespace Elasticsearch.Net
 		[EnumMember(Value = "_all")]
 		All = 1 << 1
 	}
-
 	[Flags]public enum WatcherStatsMetric
 	{
 	[EnumMember(Value = "queued_watches")]
@@ -599,6 +599,8 @@ namespace Elasticsearch.Net
 			return string.Join(",", list);
 		}
 
+
+
 		public static string GetStringValue(this IndicesStatsMetric enumValue)
 		{
 
@@ -678,7 +680,6 @@ namespace Elasticsearch.Net
 			if ((enumValue & NodesStatsIndexMetric.Suggest) != 0) list.Add("suggest");
 			return string.Join(",", list);
 		}
-
 		public static string GetStringValue(this NodesUsageMetric enumValue)
 		{
 
@@ -687,7 +688,6 @@ namespace Elasticsearch.Net
 			if ((enumValue & NodesUsageMetric.RestActions) != 0) list.Add("rest_actions");
 			return string.Join(",", list);
 		}
-
 		public static string GetStringValue(this WatcherStatsMetric enumValue)
 		{
 

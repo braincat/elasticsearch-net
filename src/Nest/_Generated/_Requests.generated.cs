@@ -2770,7 +2770,6 @@ namespace Nest
 
 		///<summary>Specify timeout for connection to master</summary>
 		public Time MasterTimeout { get { return Q<Time>("master_timeout"); } set { Q("master_timeout", value.ToString()); } }
-
 		///<summary>Ignore unavailable indexes (default: false)</summary>
 		public bool IgnoreUnavailable { get { return Q<bool>("ignore_unavailable"); } set { Q("ignore_unavailable", value); } }
 
@@ -2779,7 +2778,6 @@ namespace Nest
 
 		///<summary>Whether wildcard expressions should get expanded to open or closed indices (default: open)</summary>
 		public ExpandWildcards ExpandWildcards { get { return Q<ExpandWildcards>("expand_wildcards"); } set { Q("expand_wildcards", value); } }
-
 		///<summary>Pretty format the returned JSON response.</summary>
 		public bool Pretty { get { return Q<bool>("pretty"); } set { Q("pretty", value); } }
 
@@ -3206,7 +3204,6 @@ namespace Nest
 ///<param name="id">this parameter is required</param>
 		public DeleteScriptRequest(Id id) : base(r=>r.Required("id", id)){}
 
-
 			///<summary>Explicit operation timeout</summary>
 		public Time Timeout { get { return Q<Time>("timeout"); } set { Q("timeout", value.ToString()); } }
 
@@ -3229,6 +3226,8 @@ namespace Nest
 		public  string[] FilterPath { get { return Q< string[]>("filter_path"); } set { Q("filter_path", value); } }
 
 		}
+
+
 
 	[JsonObject(MemberSerialization = MemberSerialization.OptIn)]
 	public partial interface IDeleteSnapshotRequest : IRequest<DeleteSnapshotRequestParameters>
@@ -3718,6 +3717,8 @@ namespace Nest
 
 		}
 
+
+
 	[JsonObject(MemberSerialization = MemberSerialization.OptIn)]
 	public partial interface IFlushRequest : IRequest<FlushRequestParameters>
 	{
@@ -4149,7 +4150,6 @@ namespace Nest
 			/// <summary>/{index}</summary>
 ///<param name="index">this parameter is required</param>
 		public GetIndexRequest(Indices index) : base(r=>r.Required("index", index)){}
-
 
 			///<summary>Return local information, do not retrieve the state from master node (default: false)</summary>
 		public bool Local { get { return Q<bool>("local"); } set { Q("local", value); } }
@@ -4839,23 +4839,6 @@ namespace Nest
 		public GetScriptRequest(Id id) : base(r=>r.Required("id", id)){}
 
 
-			///<summary>Pretty format the returned JSON response.</summary>
-		public bool Pretty { get { return Q<bool>("pretty"); } set { Q("pretty", value); } }
-
-		///<summary>Return human readable values for statistics.</summary>
-		public bool Human { get { return Q<bool>("human"); } set { Q("human", value); } }
-
-		///<summary>Include the stack trace of returned errors.</summary>
-		public bool ErrorTrace { get { return Q<bool>("error_trace"); } set { Q("error_trace", value); } }
-
-		///<summary>The URL-encoded request definition. Useful for libraries that do not accept a request body for non-POST requests.</summary>
-		public string Source { get { return Q<string>("source"); } set { Q("source", value); } }
-
-		///<summary>A comma-separated list of filters used to reduce the respone.</summary>
-		public  string[] FilterPath { get { return Q< string[]>("filter_path"); } set { Q("filter_path", value); } }
-
-		}
-
 	[JsonObject(MemberSerialization = MemberSerialization.OptIn)]
 	public partial interface IGetSnapshotRequest : IRequest<GetSnapshotRequestParameters>
 	{
@@ -5404,7 +5387,6 @@ namespace Nest
 		public  string[] FilterPath { get { return Q< string[]>("filter_path"); } set { Q("filter_path", value); } }
 
 		}
-
 	[JsonObject(MemberSerialization = MemberSerialization.OptIn)]
 	public partial interface IIngestProcessorGrokRequest : IRequest<IngestProcessorGrokRequestParameters>
 	{
@@ -5431,7 +5413,6 @@ namespace Nest
 		//TODO THIS METHOD IS UNMAPPED!
 
 	}
-
 	[JsonObject(MemberSerialization = MemberSerialization.OptIn)]
 	public partial interface IInvalidateUserAccessTokenRequest : IRequest<InvalidateUserAccessTokenRequestParameters>
 	{
@@ -5606,10 +5587,8 @@ namespace Nest
 
 		///<summary>Specify whether aggregation and suggester names should be prefixed by their respective types in the response</summary>
 		public bool TypedKeys { get { return Q<bool>("typed_keys"); } set { Q("typed_keys", value); } }
-
 		///<summary>A threshold that enforces a pre-filter roundtrip to prefilter search shards based on query rewriting if the&#160;number of shards the search request expands to exceeds the threshold. This filter roundtrip can limit the number of shards significantly if for instance a shard can not match any documents based on it&#39;s rewrite method ie. if date filters are mandatory to match but the shard bounds and the query are disjoint.</summary>
 		public long PreFilterShardSize { get { return Q<long>("pre_filter_shard_size"); } set { Q("pre_filter_shard_size", value); } }
-
 		///<summary>Pretty format the returned JSON response.</summary>
 		public bool Pretty { get { return Q<bool>("pretty"); } set { Q("pretty", value); } }
 
@@ -5956,7 +5935,6 @@ namespace Nest
 		public  string[] FilterPath { get { return Q< string[]>("filter_path"); } set { Q("filter_path", value); } }
 
 		}
-
 	[JsonObject(MemberSerialization = MemberSerialization.OptIn)]
 	public partial interface INodesUsageRequest : IRequest<NodesUsageRequestParameters>
 	{
@@ -6010,7 +5988,6 @@ namespace Nest
 		//TODO THIS METHOD IS UNMAPPED!
 
 	}
-
 	[JsonObject(MemberSerialization = MemberSerialization.OptIn)]
 	public partial interface IOpenIndexRequest : IRequest<OpenIndexRequestParameters>
 	{
@@ -6593,7 +6570,6 @@ namespace Nest
 ///<param name="id">this parameter is required</param>
 		public PutScriptRequest(Id id) : base(r=>r.Required("id", id)){}
 
-
 			///<summary>Explicit operation timeout</summary>
 		public Time Timeout { get { return Q<Time>("timeout"); } set { Q("timeout", value.ToString()); } }
 
@@ -6619,6 +6595,8 @@ namespace Nest
 		public  string[] FilterPath { get { return Q< string[]>("filter_path"); } set { Q("filter_path", value); } }
 
 		}
+
+
 
 	[JsonObject(MemberSerialization = MemberSerialization.OptIn)]
 	public partial interface IPutUserRequest : IRequest<PutUserRequestParameters>
@@ -6777,6 +6755,8 @@ namespace Nest
 
 		///<summary>A comma-separated list of filters used to reduce the respone.</summary>
 		public  string[] FilterPath { get { return Q< string[]>("filter_path"); } set { Q("filter_path", value); } }
+
+
 
 		}
 
@@ -7199,10 +7179,8 @@ namespace Nest
 
 		///<summary>The source text for which the suggestions should be returned</summary>
 		public string SuggestText { get { return Q<string>("suggest_text"); } set { Q("suggest_text", value); } }
-
 		///<summary>Indicate if the number of documents that match the query should be tracked</summary>
 		public bool TrackTotalHits { get { return Q<bool>("track_total_hits"); } set { Q("track_total_hits", value); } }
-
 		///<summary>Specify whether aggregation and suggester names should be prefixed by their respective types in the response</summary>
 		public bool TypedKeys { get { return Q<bool>("typed_keys"); } set { Q("typed_keys", value); } }
 
@@ -7211,13 +7189,11 @@ namespace Nest
 
 		///<summary>The number of shard results that should be reduced at once on the coordinating node. This value should be used as a protection mechanism to reduce the memory overhead per search request if the potential number of shards in the request can be large.</summary>
 		public long BatchedReduceSize { get { return Q<long>("batched_reduce_size"); } set { Q("batched_reduce_size", value); } }
-
 		///<summary>The number of concurrent shard requests this search executes concurrently. This value should be used to limit the impact of the search on the cluster in order to limit the number of concurrent shard requests</summary>
 		public long MaxConcurrentShardRequests { get { return Q<long>("max_concurrent_shard_requests"); } set { Q("max_concurrent_shard_requests", value); } }
 
 		///<summary>A threshold that enforces a pre-filter roundtrip to prefilter search shards based on query rewriting if the&#160;number of shards the search request expands to exceeds the threshold. This filter roundtrip can limit the number of shards significantly if for instance a shard can not match any documents based on it&#39;s rewrite method ie. if date filters are mandatory to match but the shard bounds and the query are disjoint.</summary>
 		public long PreFilterShardSize { get { return Q<long>("pre_filter_shard_size"); } set { Q("pre_filter_shard_size", value); } }
-
 		///<summary>Pretty format the returned JSON response.</summary>
 		public bool Pretty { get { return Q<bool>("pretty"); } set { Q("pretty", value); } }
 
@@ -7305,10 +7281,8 @@ namespace Nest
 
 		///<summary>The source text for which the suggestions should be returned</summary>
 		public string SuggestText { get { return Q<string>("suggest_text"); } set { Q("suggest_text", value); } }
-
 		///<summary>Indicate if the number of documents that match the query should be tracked</summary>
 		public bool TrackTotalHits { get { return Q<bool>("track_total_hits"); } set { Q("track_total_hits", value); } }
-
 		///<summary>Specify whether aggregation and suggester names should be prefixed by their respective types in the response</summary>
 		public bool TypedKeys { get { return Q<bool>("typed_keys"); } set { Q("typed_keys", value); } }
 
@@ -7317,13 +7291,11 @@ namespace Nest
 
 		///<summary>The number of shard results that should be reduced at once on the coordinating node. This value should be used as a protection mechanism to reduce the memory overhead per search request if the potential number of shards in the request can be large.</summary>
 		public long BatchedReduceSize { get { return Q<long>("batched_reduce_size"); } set { Q("batched_reduce_size", value); } }
-
 		///<summary>The number of concurrent shard requests this search executes concurrently. This value should be used to limit the impact of the search on the cluster in order to limit the number of concurrent shard requests</summary>
 		public long MaxConcurrentShardRequests { get { return Q<long>("max_concurrent_shard_requests"); } set { Q("max_concurrent_shard_requests", value); } }
 
 		///<summary>A threshold that enforces a pre-filter roundtrip to prefilter search shards based on query rewriting if the&#160;number of shards the search request expands to exceeds the threshold. This filter roundtrip can limit the number of shards significantly if for instance a shard can not match any documents based on it&#39;s rewrite method ie. if date filters are mandatory to match but the shard bounds and the query are disjoint.</summary>
 		public long PreFilterShardSize { get { return Q<long>("pre_filter_shard_size"); } set { Q("pre_filter_shard_size", value); } }
-
 		///<summary>Pretty format the returned JSON response.</summary>
 		public bool Pretty { get { return Q<bool>("pretty"); } set { Q("pretty", value); } }
 
@@ -9187,7 +9159,6 @@ namespace Nest
 		public  string[] FilterPath { get { return Q< string[]>("filter_path"); } set { Q("filter_path", value); } }
 
 		}
-
 	[JsonObject(MemberSerialization = MemberSerialization.OptIn)]
 	public partial interface IXpackDeprecationInfoRequest : IRequest<XpackDeprecationInfoRequestParameters>
 	{
@@ -9225,7 +9196,6 @@ namespace Nest
 		//TODO THIS METHOD IS UNMAPPED!
 
 	}
-
 	[JsonObject(MemberSerialization = MemberSerialization.OptIn)]
 	public partial interface IXPackInfoRequest : IRequest<XPackInfoRequestParameters>
 	{

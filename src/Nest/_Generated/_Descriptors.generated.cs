@@ -1788,14 +1788,11 @@ namespace Nest
 ///<param name="id"> this parameter is required</param>
 		public DeleteScriptDescriptor(Id id) : base(r=>r.Required("id", id)){}
 
-
-
 		///<summary>Explicit operation timeout</summary>
 		public DeleteScriptDescriptor Timeout(Time timeout) => AssignParam(p=>p.Timeout(timeout.ToTimeSpan()));
 
 		///<summary>Specify timeout for connection to master</summary>
 		public DeleteScriptDescriptor MasterTimeout(Time master_timeout) => AssignParam(p=>p.MasterTimeout(master_timeout.ToTimeSpan()));
-
 		///<summary>Pretty format the returned JSON response.</summary>
 		public DeleteScriptDescriptor Pretty(bool pretty = true) => AssignParam(p=>p.Pretty(pretty));
 
@@ -1812,6 +1809,8 @@ namespace Nest
 		public DeleteScriptDescriptor FilterPath(params string[] filter_path) => AssignParam(p=>p.FilterPath(filter_path));
 
 	}
+
+
 
 	///<summary>descriptor for Exists <pre>http://www.elastic.co/guide/en/elasticsearch/reference/master/docs-get.html</pre></summary>
 	public partial class DocumentExistsDescriptor<T>  : RequestDescriptorBase<DocumentExistsDescriptor<T>,DocumentExistsRequestParameters, IDocumentExistsRequest>, IDocumentExistsRequest
@@ -2145,6 +2144,8 @@ namespace Nest
 
 	}
 
+
+
 	///<summary>descriptor for Get <pre>http://www.elastic.co/guide/en/elasticsearch/reference/master/docs-get.html</pre></summary>
 	public partial class GetDescriptor<T>  : RequestDescriptorBase<GetDescriptor<T>,GetRequestParameters, IGetRequest>, IGetRequest
 	{
@@ -2246,7 +2247,6 @@ namespace Nest
 			/// <summary>/_scripts/{id}</summary>
 ///<param name="id"> this parameter is required</param>
 		public GetScriptDescriptor(Id id) : base(r=>r.Required("id", id)){}
-
 
 
 		///<summary>Pretty format the returned JSON response.</summary>
@@ -2352,6 +2352,8 @@ namespace Nest
 		public SourceDescriptor<T> FilterPath(params string[] filter_path) => AssignParam(p=>p.FilterPath(filter_path));
 
 	}
+
+
 
 	///<summary>descriptor for Index <pre>http://www.elastic.co/guide/en/elasticsearch/reference/master/docs-index_.html</pre></summary>
 	public partial class IndexDescriptor<TDocument>  : RequestDescriptorBase<IndexDescriptor<TDocument>,IndexRequestParameters, IIndexRequest<TDocument>>, IIndexRequest<TDocument>
@@ -3137,6 +3139,8 @@ namespace Nest
 		public GetIndexDescriptor AllIndices() => this.Index(Indices.All);
 
 
+
+
 		///<summary>Return local information, do not retrieve the state from master node (default: false)</summary>
 		public GetIndexDescriptor Local(bool local = true) => AssignParam(p=>p.Local(local));
 
@@ -3812,6 +3816,8 @@ namespace Nest
 		///<summary>A comma-separated list of filters used to reduce the respone.</summary>
 		public RefreshDescriptor FilterPath(params string[] filter_path) => AssignParam(p=>p.FilterPath(filter_path));
 
+
+
 	}
 
 	///<summary>descriptor for IndicesRolloverForAll <pre>http://www.elastic.co/guide/en/elasticsearch/reference/master/indices-rollover-index.html</pre></summary>
@@ -4316,7 +4322,6 @@ namespace Nest
 		public GetPipelineDescriptor FilterPath(params string[] filter_path) => AssignParam(p=>p.FilterPath(filter_path));
 
 	}
-
 	///<summary>descriptor for IngestProcessorGrok <pre>https://www.elastic.co/guide/en/elasticsearch/plugins/master/ingest.html</pre></summary>
 	public partial class IngestProcessorGrokDescriptor  : RequestDescriptorBase<IngestProcessorGrokDescriptor,IngestProcessorGrokRequestParameters, IIngestProcessorGrokRequest>, IIngestProcessorGrokRequest
 	{
@@ -4340,7 +4345,6 @@ namespace Nest
 
 
 	}
-
 	///<summary>descriptor for IngestPutPipeline <pre>https://www.elastic.co/guide/en/elasticsearch/plugins/master/ingest.html</pre></summary>
 	public partial class PutPipelineDescriptor  : RequestDescriptorBase<PutPipelineDescriptor,PutPipelineRequestParameters, IPutPipelineRequest>, IPutPipelineRequest
 	{
@@ -4829,7 +4833,6 @@ namespace Nest
 		public NodesStatsDescriptor FilterPath(params string[] filter_path) => AssignParam(p=>p.FilterPath(filter_path));
 
 	}
-
 	///<summary>descriptor for NodesUsageForAll <pre>http://www.elastic.co/guide/en/elasticsearch/reference/master/cluster-nodes-usage.html</pre></summary>
 	public partial class NodesUsageDescriptor  : RequestDescriptorBase<NodesUsageDescriptor,NodesUsageRequestParameters, INodesUsageRequest>, INodesUsageRequest
 	{
@@ -4868,7 +4871,6 @@ namespace Nest
 
 
 	}
-
 	///<summary>descriptor for Ping <pre>http://www.elastic.co/guide/</pre></summary>
 	public partial class PingDescriptor  : RequestDescriptorBase<PingDescriptor,PingRequestParameters, IPingRequest>, IPingRequest
 	{
@@ -4898,8 +4900,6 @@ namespace Nest
 ///<param name="id"> this parameter is required</param>
 		public PutScriptDescriptor(Id id) : base(r=>r.Required("id", id)){}
 
-
-
 		///<summary>Explicit operation timeout</summary>
 		public PutScriptDescriptor Timeout(Time timeout) => AssignParam(p=>p.Timeout(timeout.ToTimeSpan()));
 
@@ -4908,7 +4908,6 @@ namespace Nest
 
 		///<summary>Context name to compile script against</summary>
 		public PutScriptDescriptor Context(string context) => AssignParam(p=>p.Context(context));
-
 		///<summary>Pretty format the returned JSON response.</summary>
 		public PutScriptDescriptor Pretty(bool pretty = true) => AssignParam(p=>p.Pretty(pretty));
 
@@ -4925,6 +4924,8 @@ namespace Nest
 		public PutScriptDescriptor FilterPath(params string[] filter_path) => AssignParam(p=>p.FilterPath(filter_path));
 
 	}
+
+
 
 	///<summary>descriptor for Reindex <pre>https://www.elastic.co/guide/en/elasticsearch/reference/master/docs-reindex.html</pre></summary>
 	public partial class ReindexOnServerDescriptor  : RequestDescriptorBase<ReindexOnServerDescriptor,ReindexOnServerRequestParameters, IReindexOnServerRequest>, IReindexOnServerRequest
@@ -6133,7 +6134,6 @@ namespace Nest
 		public GraphExploreDescriptor<T> FilterPath(params string[] filter_path) => AssignParam(p=>p.FilterPath(filter_path));
 
 	}
-
 	///<summary>descriptor for XpackDeprecationInfo <pre>http://www.elastic.co/guide/en/migration/current/migration-api-deprecation.html</pre></summary>
 	public partial class XpackDeprecationInfoDescriptor  : RequestDescriptorBase<XpackDeprecationInfoDescriptor,XpackDeprecationInfoRequestParameters, IXpackDeprecationInfoRequest>, IXpackDeprecationInfoRequest
 	{
@@ -6168,7 +6168,6 @@ namespace Nest
 
 
 	}
-
 	///<summary>descriptor for XpackInfo <pre>https://www.elastic.co/guide/en/elasticsearch/reference/current/info-api.html</pre></summary>
 	public partial class XPackInfoDescriptor  : RequestDescriptorBase<XPackInfoDescriptor,XPackInfoRequestParameters, IXPackInfoRequest>, IXPackInfoRequest
 	{

@@ -59,6 +59,10 @@ namespace Nest
 		public long SequenceNumber { get; internal set; }
 		[JsonProperty("_primary_term")]
 		public long PrimaryTerm { get; internal set; }
+		[JsonProperty("_seq_no")]
+		public long SequenceNumber { get; internal set; }
+		[JsonProperty("_primary_term")]
+		public long PrimaryTerm { get; internal set; }
 
 		/// <summary>
 		/// Specifies wheter this particular bulk operation succeeded or not

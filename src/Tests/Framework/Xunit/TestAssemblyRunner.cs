@@ -137,7 +137,10 @@ namespace Xunit
 			{
 				var summary = await RunTestCollectionAsync(messageBus, g.Collection, g.TestCases, ctx);
 				if (summary.Failed > 0)
-					this.FailedCollections.Add(Tuple.Create(g.Cluster.GetType().Name.Replace("Cluster", ""), test));
+				{
+					var cluster = g.Cluster?.GetType().Name.Replace("Cluster", "") ?? "Unknown";
+					this.FailedCollections.Add(Tuple.Create(cluster, test));
+				}
 				this.Summaries.Add(summary);
 			}
 			catch (TaskCanceledException)
